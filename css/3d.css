@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    /* 修改为 column 让子元素垂直排列 */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    perspective: 1700px;
+    background-color: #f9fafb;
+    font-family: sans-serif;
+    position: relative;
+}
+
+nav {
+    background-color: #1f2937;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f3f4f6;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-link {
+    color: #9ca3af;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f3f4f6;
+}
+
+.cylinder-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cylinder {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    animation: rotate 10s linear infinite;
+}
+
+.small-cylinder {
+    width: 100px;
+    height: 200px;
+}
+
+.left-cylinder {
+    margin-right: 350px;
+}
+
+.right-cylinder {
+    margin-left: 350px;
+}
+
+.image-wrapper {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    transform-style: preserve-3d;
+}
+
+.cylinder img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center center;
+    transform: translateZ(1px);
+    opacity: 0.9;
+    filter: blur(1px);
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden;
+}
+
+.image-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: rotateY(180deg) translateZ(1px);
+    backface-visibility: hidden;
+}
+
+.cylinder img:hover {
+    opacity: 1;
+    filter: blur(0);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(370deg);
+    }
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: white;
+    box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.1), 0 -1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    text-align: center;
+    color: #4b7063;
+}
+
+/* 以 index.css 为例 */
+.snowflake {
+    position: absolute;
+    width: 12px; /* 更大的雪花 */
+    height: 12px;
+    background: rgba(255, 128, 211, 0.8); /* 半透明雪花 */
+    border-radius: 50%;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    filter: blur(1px); /* 模糊效果 */
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(20vw); /* 增加水平移动 */
+        opacity: 0;
+    }
+}
+
+/* 新增 3D 展示区域样式 */
+.three-d-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+/* 3d.css */
+.three-d-section {
+    padding: 2rem;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+.three-d-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.three-d-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+}
+/* 3d.css */
+.three-d-container:hover {
+    box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.2), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+/* 新增图片旋转样式 */
+.image-rotate-0 {
+    transform: rotateY(0deg) translateZ(200px);
+}
+
+.image-rotate-45 {
+    transform: rotateY(45deg) translateZ(200px);
+}
+
+.image-rotate-90 {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.image-rotate-135 {
+    transform: rotateY(135deg) translateZ(200px);
+}
+
+.image-rotate-180 {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.image-rotate-225 {
+    transform: rotateY(225deg) translateZ(200px);
+}
+
+.image-rotate-270 {
+    transform: rotateY(270deg) translateZ(200px);
+}
+
+.image-rotate-315 {
+    transform: rotateY(315deg) translateZ(200px);
+}
+
+.image-rotate1-0 {
+    transform: rotateY(0deg) translateZ(70px);
+}
+
+.image-rotate-60 {
+    transform: rotateY(60deg) translateZ(70px);
+}
+
+.image-rotate-120 {
+    transform: rotateY(120deg) translateZ(70px);
+}
+
+.image-rotate1-180 {
+    transform: rotateY(180deg) translateZ(70px);
+}
+
+.image-rotate-240 {
+    transform: rotateY(240deg) translateZ(70px);
+}
+
+.image-rotate-300 {
+    transform: rotateY(300deg) translateZ(70px);
+}

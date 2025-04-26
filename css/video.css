@@ -1,0 +1,107 @@
+body {
+    background-color: #f9fafb;
+    font-family: sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+nav {
+    background-color: #1f2937;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #f3f4f6;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #9ca3af;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f3f4f6;
+}
+
+.video-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.video-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.video-player {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: white;
+    box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.1), 0 -1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    color: #4b5563;
+}
+
+/* 自定义一些过渡和动画效果 */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* 以 index.css 为例 */
+.snowflake {
+    position: absolute;
+    width: 12px; /* 更大的雪花 */
+    height: 12px;
+    background: rgba(255, 128, 211, 0.8); /* 半透明雪花 */
+    border-radius: 50%;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    filter: blur(1px); /* 模糊效果 */
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(20vw); /* 增加水平移动 */
+        opacity: 0;
+    }
+}
