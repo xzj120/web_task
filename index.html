@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视觉盛宴 - 主页</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <!-- 雪花容器 -->
+    <div id="snow-container"></div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">视觉盛宴</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">主页</a>
+                <a href="gallery.html" class="nav-link">光影画廊</a>
+                <a href="video.html" class="nav-link">影像天地</a>
+                <a href="3d.html" class="nav-link">多维幻景</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 音乐播放 -->
+    <audio id="music" autoplay>
+        <source src="../musics/music-1.mp3" type="audio/mpeg">
+        你的浏览器不支持音频播放。
+    </audio>
+
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">欢迎来到视觉盛宴</h1>
+            <p class="hero-subtitle">体验前所未有的视觉冲击</p>
+            <a href="#" class="hero-button hover-scale">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 图片转场区域 -->
+    <section class="image-section">
+        <button id="open-comment-modal" class="comment-position">发表评论</button>
+        <h2 class="image-title">图像绮梦</h2>      
+        <div class="image-slider">
+            <img src="../images/lun-1.jpg" alt="图片1" class="active">
+            <img src="../images/lun-2.jpg" alt="图片2">
+            <img src="../images/lun-3.jpg" alt="图片3">
+            <!-- 添加左右切换按钮 -->
+            <button id="prevButton" class="slider-button">&lt;</button>
+            <button id="nextButton" class="slider-button">&gt;</button>
+        </div>
+    </section>
+
+    <!-- 评论模态框 -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>发表评论</h2>
+            <textarea id="comment-input" placeholder="输入评论内容" rows="5"></textarea>
+            <button id="submit-comment">提交评论</button>
+            <div id="comment-container"></div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-container">
+            &copy; 2025 视觉盛宴. 保留所有权利.
+        </div>
+    </footer>
+
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
